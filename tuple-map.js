@@ -1,12 +1,17 @@
+const TupleSet = require('./tuple-set.js');
 
 class TupleMap extends Map{
-	constructor(iterable, tupleFactory){
+	constructor(iterable, factory){
 		if(iterable instanceof Function){
-			tupleFactory = iterable;
+			factory = iterable;
 			iterable = [];
 		}
+		if(!factory){
+			let scope = new TupleSet();
+			factory = scope.createFactory();
+		}
 		super(iterable);
-		this.tuple = tupleFactory;
+		this.tuple = factory;
 	}
 
 	has(key){
