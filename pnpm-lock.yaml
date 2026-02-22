@@ -1,5 +1,0 @@
-dependencies:
-  '@grunmouse/extendable-sets': 'link:../extendable-sets'
-lockfileVersion: 5.1
-specifiers:
-  '@grunmouse/extendable-sets': 'link:..\extendable-sets'
